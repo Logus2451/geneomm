@@ -6,19 +6,6 @@ import { services } from '@/lib/data';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.1,
-      duration: 0.5,
-      ease: [0.4, 0, 0.2, 1],
-    },
-  }),
-};
-
 export default function ServicesGrid() {
   return (
     <Section title="Our Specialty Services" subtitle="COMPREHENSIVE GENETIC CARE">
@@ -27,11 +14,10 @@ export default function ServicesGrid() {
           <motion.div
             key={service.title}
             className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col group"
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            custom={i}
+            transition={{ delay: i * 0.1, duration: 0.5 }}
           >
             <div className="flex-shrink-0">
               <service.icon className="h-10 w-10 text-primary mb-4" />
