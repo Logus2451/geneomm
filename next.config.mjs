@@ -4,7 +4,8 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'vignosaas.in',
+        // hostname: 'vignosaas.in',
+        hostname: 'geneomm.wordpress.com',
         port: '',
         pathname: '/**',
       },

@@ -19,7 +19,8 @@ export interface WordPressPost {
     };
 }
 
-const BASE_URL = 'https://vignosaas.in/wp-json/wp/v2';
+// const BASE_URL = 'https://vignosaas.in/wp-json/wp/v2';
+const BASE_URL = 'https://public-api.wordpress.com/wp/v2/sites/geneomm.wordpress.com';
 
 export async function getPosts(): Promise<WordPressPost[]> {
     const response = await fetch(`${BASE_URL}/posts?_embed=true`, {
