@@ -7,6 +7,8 @@ import Footer from '@/components/layout/Footer';
 import AppointmentModal from '@/components/layout/AppointmentModal';
 import SocialSidebar from '@/components/ui/SocialSidebar';
 import FloatingSocial from '@/components/ui/FloatingSocial';
+import TopProgressBar from '@/components/ui/TopProgressBar';
+import { Suspense } from 'react';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -53,6 +55,9 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className={inter.className} suppressHydrationWarning>
         <ModalProvider>
+          <Suspense fallback={null}>
+            <TopProgressBar />
+          </Suspense>
           <div className="flex flex-col min-h-screen bg-neutral">
             <Header />
             <main className="flex-grow">{children}</main>

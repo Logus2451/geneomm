@@ -20,6 +20,7 @@ export default function Header() {
     { name: 'Services', href: '/services' },
     { name: 'Latest Updates', href: '/hospitals' },
     { name: 'Contact', href: '/contact' },
+    { name: 'Blogs', href: '/blog' },
   ];
 
   const handleBookAppointment = () => {
